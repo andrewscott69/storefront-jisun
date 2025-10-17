@@ -23,6 +23,10 @@ import {
 import { useCartStore } from "@/lib/cart-store";
 import { motion, AnimatePresence } from "framer-motion";
 
+// ✅ Base URL for Supabase images (update this if needed)
+const SUPABASE_URL = "https://hridnstmdhiuypqsgcnf.supabase.co";
+const BUCKET_PATH = "/storage/v1/object/public/product-images/products/";
+
 interface Product {
   id: string;
   name: string;
@@ -102,9 +106,34 @@ export function AnimatedProductGrid({ filters }: AnimatedProductGridProps) {
 
         const res = await fetch(`/api/products?${queryParams.toString()}`);
         const data = await res.json();
-        setProducts(Array.isArray(data) ? data : []);
+
+        console.log("✅ Products fetched:", data);
+
+        // ✅ Normalize image URLs
+        const normalized = (Array.isArray(data) ? data : []).map((p: any) => {
+          let imageUrl = p.image_url || "";
+
+          // If image_url is missing but file name is provided (like `p.image`)
+          if (!imageUrl && p.image) {
+            imageUrl = `${SUPABASE_URL}${BUCKET_PATH}${p.image}`;
+          }
+
+          // If image_url doesn't start with "http" or "/"
+          if (imageUrl && !imageUrl.startsWith("http") && !imageUrl.startsWith("/")) {
+            imageUrl = `${SUPABASE_URL}${BUCKET_PATH}${imageUrl}`;
+          }
+
+          // Final fallback
+          if (!imageUrl) {
+            imageUrl = "/placeholder.svg";
+          }
+
+          return { ...p, image_url: imageUrl };
+        });
+
+        setProducts(normalized);
       } catch (error) {
-        console.error("Failed to fetch products:", error);
+        console.error("❌ Failed to fetch products:", error);
         setProducts([]);
       } finally {
         setLoading(false);
@@ -138,7 +167,7 @@ export function AnimatedProductGrid({ filters }: AnimatedProductGridProps) {
     visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
 
-  if (!mounted) return null; // ✅ completely skip SSR markup mismatch
+  if (!mounted) return null;
 
   return (
     <motion.div
@@ -241,7 +270,7 @@ export function AnimatedProductGrid({ filters }: AnimatedProductGridProps) {
                   >
                     <div className="relative overflow-hidden">
                       <motion.img
-                        src={product.image_url || "/placeholder.svg"}
+                        src={product.image_url}
                         alt={product.name}
                         className="w-full h-48 object-cover"
                         whileHover={{ scale: 1.05 }}
