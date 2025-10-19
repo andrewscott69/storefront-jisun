@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
+// 1. Import the Link component from next/link
+import Link from 'next/link' 
 
 export function HeroSection() {
   return (
@@ -29,19 +31,15 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg">
-              Shop Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            {/* 2. Replace the Button component with the Link component */}
+            <Link href="/products" passHref legacyBehavior>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg">
+                Shop Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-3 text-lg bg-transparent"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+            {/* If you had a second button, it would go here */}
           </div>
         </div>
       </div>
