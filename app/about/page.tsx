@@ -97,7 +97,7 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                For over 25 years, MachinePro has been the trusted partner for businesses worldwide, delivering premium
+                For over 25 years, Jinsun Machineries has been the trusted partner for businesses worldwide, delivering premium
                 industrial machinery and unparalleled service excellence.
               </motion.p>
             </motion.div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Founded in 1999, MachinePro began with a simple mission: to provide businesses with reliable,
+                    Founded in 1999, Jinsun began with a simple mission: to provide businesses with reliable,
                     high-quality industrial machinery that drives productivity and growth. What started as a small
                     operation has grown into a global leader in the industrial equipment sector.
                   </p>
@@ -256,7 +256,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Work Together?</h2>
               <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                Join thousands of satisfied customers who trust MachinePro for their industrial equipment needs.
+                Join thousands of satisfied customers who trust Jinsun for their industrial equipment needs.
               </p>
               <motion.button
                 className="bg-background text-foreground px-8 py-3 rounded-lg font-medium hover:bg-background/90 transition-colors"
