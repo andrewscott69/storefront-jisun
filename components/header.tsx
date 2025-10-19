@@ -33,9 +33,13 @@ export function Header() {
               Products
             </Link>
             
-            <a href="#" className="text-sm font-medium hover:text-gray-700 transition-colors">
+            <Link href="/about" className="text-sm font-medium hover:text-gray-700 transition-colors">
               About
-            </a>
+            </Link>
+
+              <Link href="/contact" className="text-sm font-medium hover:text-gray-700 transition-colors">
+              Contact Us
+            </Link>
           </nav>
 
           {/* Search Bar */}
@@ -69,15 +73,13 @@ export function Header() {
                 <Link href="/products" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
                   Products
                 </Link>
-                <a href="#" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
-                  Categories
-                </a>
-                <a href="#" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
-                  Industrial
-                </a>
-                <a href="#" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
-                  About
-                </a>
+                 <Link href="/about" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+                  About Us
+                </Link>
+                 <Link href="/contact" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+                  Contact Us
+                </Link>
+               
               </nav>
             </div>
           </div>
