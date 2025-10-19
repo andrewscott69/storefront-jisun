@@ -2,11 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Truck, Shield, Headphones, Award } from "lucide-react"
 
 const features = [
-  {
-    icon: Truck,
-    title: "Fast Shipping",
-    description: "Free delivery on orders over $5,000",
-  },
+
   {
     icon: Shield,
     title: "Quality Guarantee",
