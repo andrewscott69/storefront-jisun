@@ -5,8 +5,11 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "../lib/generated/prisma"
+  provider      = "prisma-client-js"
+  output        = "../lib/generated/prisma"
+  // FIX: Added 'rhel-openssl-3.0.x' to binaryTargets to ensure the Query Engine
+  // is available in the Linux environment where the application is deployed (e.g., Vercel).
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
