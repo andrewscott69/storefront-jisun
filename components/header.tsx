@@ -17,7 +17,8 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/">
-              <h1 className="text-2xl font-bold tracking-tight cursor-pointer">Jinsun Machineries</h1>
+              {/* <h1 className="text-2xl font-bold tracking-tight cursor-pointer">Jinsun Machineries</h1> */}
+              <img src="/JinsunMachinerya.png" alt=""Jinsun Logo" />
             </Link>
           </div>
 
