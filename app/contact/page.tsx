@@ -29,22 +29,17 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    {
-      icon: Phone,
-      title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
-      description: "Mon-Fri 8am-6pm EST",
-    },
+    
     {
       icon: Mail,
       title: "Email",
-      details: ["sales@machinepro.com", "support@machinepro.com"],
+      details: ["support@jinsunmachineries.com", "Jinsunwentoumachineries.hk@gmail.com"],
       description: "24/7 Response Time",
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["1234 Industrial Parkway", "Detroit, MI 48201, USA"],
+      details: ["182-190 Tai Lin Pai road", "Kwai Chung,Hung Kong"],
       description: "Visit Our Showroom",
     },
     {
@@ -141,7 +136,7 @@ export default function ContactPage() {
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
-                        placeholder="John Doe"
+                        placeholder=""
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
@@ -152,7 +147,7 @@ export default function ContactPage() {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="john@company.com"
+                        placeholder=""
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
@@ -166,7 +161,7 @@ export default function ContactPage() {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder=""
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
@@ -175,7 +170,7 @@ export default function ContactPage() {
                       <Label htmlFor="company">Company Name</Label>
                       <Input
                         id="company"
-                        placeholder="Your Company"
+                        placeholder=""
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       />
@@ -240,7 +235,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-card p-6 rounded-lg border">
-                  <h3 className="text-xl font-semibold mb-4">Why Choose MachinePro?</h3>
+                  <h3 className="text-xl font-semibold mb-4">Why Choose Us?</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <div className="h-6 w-6 rounded-full bg-accent/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
