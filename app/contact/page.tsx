@@ -228,7 +228,7 @@ export default function ContactPage() {
                       <div className="text-center">
                         <MapPin className="h-12 w-12 text-accent mx-auto mb-2" />
                         <p className="text-sm text-muted-foreground">Interactive Map</p>
-                        <p className="text-xs text-muted-foreground">1234 Industrial Parkway, Detroit, MI</p>
+                        <p className="text-xs text-muted-foreground">182-190 Tai Lin Pai road,Kwai Chung,Hung Kong</p>
                       </div>
                     </div>
                   </div>
@@ -298,10 +298,7 @@ export default function ContactPage() {
 
             <div className="max-w-3xl mx-auto space-y-4">
               {[
-                {
-                  q: "What is your typical delivery time?",
-                  a: "Standard delivery takes 5-7 business days. Express shipping options are available for urgent orders.",
-                },
+                
                 {
                   q: "Do you offer installation services?",
                   a: "Yes, we provide professional installation services by certified technicians for all machinery purchases.",
