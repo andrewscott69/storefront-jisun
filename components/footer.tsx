@@ -125,14 +125,9 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-orange-400 mt-1 flex-shrink-0" />
                 <div className="text-slate-300 text-sm">
-                  <p>123 Industrial Avenue</p>
-                  <p>Manufacturing District</p>
-                  <p>City, State 12345</p>
+                  <p>182-190 Tai Lin Pai road</p>
+                  <p>Kwai Chung,Hung Kong</p>
                 </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
