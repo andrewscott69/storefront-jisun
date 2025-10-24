@@ -209,41 +209,7 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Leadership</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Experienced professionals dedicated to driving innovation and excellence in industrial machinery.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="relative h-64 mb-4 rounded-lg overflow-hidden bg-muted">
-                    <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-muted-foreground">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+       
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
