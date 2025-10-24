@@ -45,36 +45,7 @@ export function Footer() {
               Leading supplier of industrial machinery and equipment. Providing quality solutions for manufacturing,
               construction, and industrial applications worldwide.
             </p>
-            <div className="flex space-x-3">
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.1, color: "#f97316" }}
-                className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
-              >
-                <Facebook size={16} />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.1, color: "#f97316" }}
-                className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
-              >
-                <Twitter size={16} />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.1, color: "#f97316" }}
-                className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
-              >
-                <Linkedin size={16} />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.1, color: "#f97316" }}
-                className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors"
-              >
-                <Instagram size={16} />
-              </motion.a>
-            </div>
+            
           </motion.div>
 
           {/* Quick Links */}
@@ -131,7 +102,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">info@jinsunmachineries.com</span>
+                <span className="text-slate-300 text-sm">support@jinsunmachineries.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-orange-400 flex-shrink-0" />
