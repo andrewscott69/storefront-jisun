@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../lib/generated/prisma"
+  // FIX: Added 'rhel-openssl-3.0.x' to binaryTargets to ensure the Query Engine
+  // is available in the Linux environment where the application is deployed (e.g., Vercel).
+  binaryTargets = ["native", "rhel-openssl-3.0.x"] 
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  // This ID comes directly from supabase.auth.user.id
+  id        String   @id
+  email     String   @unique
+  firstName String?
+  lastName  String?
+  phone     String?
+  company   String?
+  createdAt DateTime @default(now())
+
+  // A user can have many orders
+  orders Order[]
+}
+
+model Product {
+  id              String    @id @default(uuid())
+  name            String
+  description     String?
+  price           Float
+  original_price  Float?
+  image_url       String?
+  category        Category? @relation(fields: [category_id], references: [id])
+  category_id     String?
+  brand           Brand?    @relation(fields: [brand_id], references: [id])
+  brand_id        String?
+  rating          Float     @default(0)
+  review_count    Int       @default(0)
+  is_best_seller  Boolean   @default(false)
+  is_new          Boolean   @default(false)
+  is_featured     Boolean   @default(false)
+  is_out_of_stock Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Category {
+  id      String    @id @default(uuid())
+  name    String
+  products Product[]
+}
+
+model Brand {
+  id      String    @id @default(uuid())
+  name    String
+  products Product[]
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String
+  phone       String?
+  company     String?
+  address     String
+  city        String
+  state       String
+  zip         String
+  country     String
+  totalPrice  Float
+  createdAt   DateTime    @default(now())
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  order     Order  @relation(fields: [orderId], references: [id])
+  orderId   String
+  productId String
+  name      String
+  image     String?
+  quantity  Int
+  price     Float
+}
