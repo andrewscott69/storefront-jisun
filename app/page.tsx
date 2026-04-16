@@ -3,8 +3,11 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { FeaturesSection } from "@/components/features-section"
+import { CategoriesShowcase } from "@/components/categories-showcase"
 import { ProductCarousel } from "@/components/product-carousel"
 import { PopularProducts } from "@/components/popular-products"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { SourcingCTA } from "@/components/sourcing-cta"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -16,8 +19,11 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <FeaturesSection />
+        <CategoriesShowcase />
         <ProductCarousel />
         <PopularProducts />
+        <TestimonialsSection />
+        <SourcingCTA />
 
         <motion.section
           className="py-16 text-center bg-gradient-to-br from-background to-muted/20"
@@ -28,7 +34,10 @@ export default function HomePage() {
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/products">
-              <button className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all shadow-lg">
+              <button
+                type="button"
+                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all shadow-lg"
+              >
                 View All Products
               </button>
             </Link>

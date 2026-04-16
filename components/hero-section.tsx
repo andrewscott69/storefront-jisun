@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, MessageSquare } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
@@ -7,41 +8,47 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/modern-industrial-machinery-factory-floor-with-adv.jpg"
-          alt="Industrial machinery background"
+          src="/hero-image.jpeg"
+          alt="Jinsun Machineries industrial workshop"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-orange-400 mb-6">
+            Industrial Machinery · Kwai Chung, Hong Kong
+          </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-            <span className="block text-balance">Power Your</span>
-            <span className="block text-balance">Production</span>
+            <span className="block text-balance">Equipment that keeps</span>
+            <span className="block text-balance">your line running.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto text-balance">
-            {
-              "Discover premium industrial machinery and equipment designed to elevate your manufacturing capabilities. From precision tools to heavy-duty systems."
-            }
+          <p className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl mx-auto text-balance">
+            CNC, welding, hydraulic, power and safety equipment — sourced from trusted manufacturers, stocked in
+            Hong Kong and backed by real technical support.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg">
-              Shop Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link href="/products">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg">
+                Browse Products
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-3 text-lg bg-transparent"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 px-8 py-3 text-lg bg-transparent"
+              >
+                <MessageSquare className="mr-2 h-5 w-5" />
+                Request a Quote
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

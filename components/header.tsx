@@ -19,7 +19,7 @@ export function Header() {
           <Link href="/">
               {/* <h1 className="text-2xl font-bold tracking-tight cursor-pointer">Jinsun Machineries</h1> */}
               {/* CORRECTION APPLIED HERE: The alt attribute was incorrectly formatted */}
-              <img src="/placeholder-logo.png" alt="Jinsun Logo" className="h-8 w-auto" />
+              <img src="/jinsun-logo.png" alt="Jinsun Machineries" className="h-8 w-auto" />
             </Link>
           </div>
 
