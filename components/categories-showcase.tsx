@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Cog, Flame, Wrench, Gauge, Zap, HardHat, ArrowRight } from "lucide-react"
+import { Cog, Flame, Wrench, Gauge, SunMedium, HardHat, ArrowRight } from "lucide-react"
 
 const categories = [
   {
@@ -16,8 +16,8 @@ const categories = [
     icon: Flame,
   },
   {
-    name: "Industrial Tools",
-    description: "Workshop tooling, measuring and metalworking accessories.",
+    name: "Power & Industrial Tools",
+    description: "Drills, grinders, saws, measuring gear and metalworking accessories.",
     icon: Wrench,
   },
   {
@@ -26,9 +26,9 @@ const categories = [
     icon: Gauge,
   },
   {
-    name: "Power Tools",
-    description: "Professional-grade drills, grinders, saws and impact tools.",
-    icon: Zap,
+    name: "Solar Energy Systems",
+    description: "Panels, inverters, batteries and balance-of-system for off-grid and commercial installs.",
+    icon: SunMedium,
   },
   {
     name: "Safety Equipment",

@@ -25,15 +25,15 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/products" className="text-sm font-medium hover:text-gray-700 transition-colors">
+            <Link href="/products" className="text-sm font-medium hover:text-gray-700 transition-colors">
               Products
             </Link>
-            
+
             <Link href="/about" className="text-sm font-medium hover:text-gray-700 transition-colors">
               About
             </Link>
 
-              <Link href="/contact" className="text-sm font-medium hover:text-gray-700 transition-colors">
+            <Link href="/contact" className="text-sm font-medium hover:text-gray-700 transition-colors">
               Contact Us
             </Link>
           </nav>
@@ -66,13 +66,13 @@ export function Header() {
                 <Input placeholder="Search machinery..." className="pl-10 bg-muted/50" />
               </div>
               <nav className="flex flex-col space-y-2">
-              <Link href="/products" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/products" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
                   Products
                 </Link>
-                 <Link href="/about" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/about" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
                   About Us
                 </Link>
-                 <Link href="/contact" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/contact" className="text-sm font-medium hover:text-gray-700 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
                   Contact Us
                 </Link>
               </nav>

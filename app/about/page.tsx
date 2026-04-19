@@ -75,9 +75,10 @@ export default function AboutPage() {
             Industrial machinery, sourced and supported from Hong Kong.
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Jinsun Machineries supplies quality industrial equipment to manufacturers, contractors, fabrication
-            workshops and maintenance teams. From our base in Kwai Chung, we deliver the tools that keep production
-            lines moving — backed by responsive technical support and practical, honest advice.
+            Jinsun Machineries supplies quality industrial equipment and solar energy systems to manufacturers,
+            contractors, fabrication workshops, installers and maintenance teams. From our base in Kwai Chung, we
+            deliver the tools that keep production lines moving — and the clean energy systems that help power them
+            — backed by responsive technical support and practical, honest advice.
           </p>
         </div>
 
@@ -92,7 +93,8 @@ export default function AboutPage() {
             </p>
             <p>
               We started with a focused catalogue of CNC, welding, hydraulic and power tool lines we knew inside and
-              out, and grew from there — adding categories only when we could support them properly. Today we supply
+              out, and grew from there — adding categories only when we could support them properly, including
+              solar energy systems for customers moving towards cleaner, more resilient power. Today we supply
               businesses across Hong Kong, Greater China and export markets, with a team that treats every enquiry
               like the project depends on it.
             </p>
@@ -107,8 +109,8 @@ export default function AboutPage() {
               <Factory className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-semibold text-lg mb-2">Supply</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                CNC machines, welding equipment, hydraulic systems, power tools, industrial tooling and safety gear —
-                stocked and available to ship.
+                CNC machines, welding equipment, hydraulic systems, power and industrial tools, safety gear and
+                solar energy systems — stocked and available to ship.
               </p>
             </div>
             <div className="border rounded-lg p-6">

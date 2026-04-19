@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Truck, Shield, Headphones, Award } from "lucide-react"
+import { Globe, Shield, Headphones, Award } from "lucide-react"
 
 const features = [
   {
-    icon: Truck,
-    title: "Fast Shipping",
-    description: "Free delivery on orders over $5,000",
+    icon: Globe,
+    title: "Worldwide Shipping",
+    description: "From Kwai Chung to Asia and beyond",
   },
   {
     icon: Shield,

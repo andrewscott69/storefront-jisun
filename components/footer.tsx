@@ -105,9 +105,9 @@ export function Footer() {
               {[
                 "CNC Machines",
                 "Welding Equipment",
-                "Industrial Tools",
+                "Power & Industrial Tools",
                 "Hydraulic Systems",
-                "Power Tools",
+                "Solar Energy Systems",
                 "Safety Equipment",
               ].map((category) => (
                 <li key={category}>
