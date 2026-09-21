@@ -24,8 +24,8 @@ import { useCartStore } from "@/lib/cart-store";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ✅ Base URL for Supabase images (update this if needed)
-const SUPABASE_URL = "https://hridnstmdhiuypqsgcnf.supabase.co";
-const BUCKET_PATH = "/storage/v1/object/public/product-images/products/";
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const BUCKET_PATH = `/storage/v1/object/public/${process.env.NEXT_PUBLIC_SUPABASE_BUCKET || "jinsunbk"}/products/`;
 
 interface Product {
   id: string;

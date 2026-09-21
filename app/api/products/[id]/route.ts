@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-const SUPABASE_URL = "https://hridnstmdhiuypqsgcnf.supabase.co";
-const BUCKET_PATH = "/storage/v1/object/public/product-images/products/";
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const BUCKET_PATH = `/storage/v1/object/public/${process.env.NEXT_PUBLIC_SUPABASE_BUCKET || "jinsunbk"}/products/`;
 
 export async function GET(
   request: Request,
