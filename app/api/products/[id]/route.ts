@@ -6,13 +6,16 @@ const BUCKET_PATH = `/storage/v1/object/public/${process.env.NEXT_PUBLIC_SUPABAS
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    console.log("Fetching product with ID:", params.id);
+    // Next 15 hands route params in as a Promise. Reading .id off it without
+    // awaiting gave undefined, so findUnique was called with an undefined id
+    // and threw - every product detail request came back as a 500.
+    const { id } = await params;
 
     const product = await prisma.product.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         category: { select: { id: true, name: true } },
         brand: { select: { id: true, name: true } },

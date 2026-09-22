@@ -22,20 +22,35 @@ export async function GET(req: Request) {
       price: { gte: minPrice, lte: maxPrice },
     };
 
+    // The UI sends IDs, but names are accepted too. The scalar fields on the
+    // Prisma model are category_id / brand_id - "categoryId" and "brandId" are
+    // the API's own output shape and do not exist on the model, so querying
+    // them threw and turned every filtered request into a 500.
+    //
+    // Each filter is its own OR inside a top-level AND: picking a category and
+    // a brand has to narrow the results, not widen them the way a single
+    // shared OR array did.
+    const and: any[] = [];
+
     if (categories?.length) {
-      where.OR = [
-        { category: { name: { in: categories, mode: "insensitive" } } },
-        { categoryId: { in: categories } }, // handle both string or ID filters
-      ];
+      and.push({
+        OR: [
+          { category: { name: { in: categories, mode: "insensitive" } } },
+          { category_id: { in: categories } },
+        ],
+      });
     }
 
     if (brands?.length) {
-      where.OR = [
-        ...(where.OR || []),
-        { brand: { name: { in: brands, mode: "insensitive" } } },
-        { brandId: { in: brands } },
-      ];
+      and.push({
+        OR: [
+          { brand: { name: { in: brands, mode: "insensitive" } } },
+          { brand_id: { in: brands } },
+        ],
+      });
     }
+
+    if (and.length) where.AND = and;
 
     const products = await prisma.product.findMany({
       where,
